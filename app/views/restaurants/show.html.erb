@@ -1,0 +1,16 @@
+
+<div class="container text-center">
+  <div class="d-flex justify-content-around align-items-center">
+    <h1> <%= @restaurant.name %> </h1>  
+  </div>
+  <p>  <%= @restaurant.address %>  </p>
+  <br>
+  <% @restaurant.reviews.each do |review| %>
+  <p> <%= review.content %> </p>
+  <% end %>
+  <%= link_to "review", new_restaurant_review_path(@restaurant.id) %>
+
+</div>
+
+<%#     <%= link_to "EDIT", edit_restaurant_path %>
+    <%# <%= link_to "DELETE", article_path(@restaurant), method: :delete, data:{ confirm: "Tem certeza?"} %> 
